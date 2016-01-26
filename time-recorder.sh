@@ -34,10 +34,16 @@ esac
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [ ! -d $DIR/logs/ ]
 then
-	mkdir $DIR/logs/ && date "+%d-%m-%y %H:%M:%S" >> $DIR/logs/hours.log && echo "#################" >> $DIR/logs/hours.log
+	mkdir $DIR/logs/ && date "+%d-%m-%y %H:%M:%S" >> $DIR/logs/hours.log
 else
-	date "+%d-%m-%y %H:%M:%S" >> $DIR/logs/hours.log && echo "################" >> $DIR/logs/hours.log
+	date "+%d-%m-%y %H:%M:%S" >> $DIR/logs/hours.log 
 fi
 
-echo $ACTION >> $DIR/logs/hours.log && echo $ticketNumber >> $DIR/logs/hours.log && echo "################" >> $DIR/logs/hours.log
+echo $ACTION >> $DIR/logs/hours.log && echo $ticketNumber >> $DIR/logs/hours.log 
+
+if [ $1 == "-e" ]
+then
+	echo "################" >> $DIR/logs/hours.log
+fi
+
 echo "Action recorded"
