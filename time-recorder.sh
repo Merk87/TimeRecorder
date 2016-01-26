@@ -12,6 +12,7 @@ case "$1" in
 	-s) echo "In what amazing thing are you gonna work now Viktor?"
 	    read ticketNumber
 	;;
+	#TODO Add a read on the last line to check if is a closure of a task
 	-e) echo "Wow! Another ticket finished?? Tell me the code to account for it!"
 	    read ticketNumber
 	;;
