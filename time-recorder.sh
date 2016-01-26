@@ -8,8 +8,16 @@ then
 	exit
 fi
 
-echo "In what amazing thing are you working today Victor?"
-read ticketNumber
+case "$1" in
+	-s) echo "In what amazing thing are you gonna work now Viktor?"
+	    read ticketNumber
+	;;
+	-e) echo "Wow! Another ticket finished?? Tell me the code to account for it!"
+	    read ticketNumber
+	;;
+	*) echo "Action not implemented yet..."
+	;;
+esac
 
 case "$1" in
 	-s) ACTION=--Starting--
