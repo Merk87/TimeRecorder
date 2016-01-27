@@ -8,6 +8,10 @@ then
 	exit
 fi
 
+
+#Check if we have the directory structure ready for our time log.
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 case "$1" in
 	-s) echo "In what amazing thing are you gonna work now Viktor?"
 	    read ticketNumber
@@ -15,6 +19,9 @@ case "$1" in
 	#TODO Add a read on the last line to check if is a closure of a task
 	-e) echo "Wow! Another ticket finished?? Tell me the code to account for it!"
 	    read ticketNumber
+	;;
+	-n) echo "Good morning Master, it is a new (probably rainy)  day in the Netherlands, enjoy it :)" && echo -e >> $DIR/logs/hours.log && echo -e >> $DIR/logs/hours.log
+	    exit
 	;;
 	*) echo "Action not implemented yet..."
 	;;
@@ -31,8 +38,6 @@ case "$1" in
 	;;
 esac
 
-#Check if we have the directory structure ready for our time log.
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [ ! -d $DIR/logs/ ]
 then
 	mkdir $DIR/logs/ && date "+%d-%m-%y %H:%M:%S" >> $DIR/logs/hours.log
