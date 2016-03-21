@@ -23,6 +23,9 @@ case "$1" in
 	-n) echo "Good morning Master, it is a new (probably rainy)  day in the Netherlands, enjoy it :)" && echo -e >> $DIR/logs/hours.log && echo -e >> $DIR/logs/hours.log
 	    exit
 	;;
+        -log) echo -e "Here are the last hours :)" && tail -50 $DIR/logs/hours.log 
+	    exit
+	;;
 	*) echo "Action not implemented yet..."
 	;;
 esac
