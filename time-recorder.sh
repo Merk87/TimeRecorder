@@ -8,7 +8,8 @@ then
 	exit
 fi
 
-
+#TODO Add this awesome command!
+#tail ./logs/hours.log -n $(grep $(date +"%d-%m") -n ./logs/hours.log | head -1 | egrep -o '^[0-9]+')
 #Check if we have the directory structure ready for our time log.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
